@@ -1,3 +1,3 @@
-def time_string(integer)
-    return Time.at(integer).utc.strftime("%H:%M:%S")
+def time_string(num)
+    return Time.at(num).utc.strftime("%H:%M:%S")
 end
