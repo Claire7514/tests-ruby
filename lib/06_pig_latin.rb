@@ -13,7 +13,8 @@ def translate(string)
         i += 1
       end
       word = word.tr(first, "")
-      countfinal == string.split(" ").length - 1 ? final << word + first + "ay" : final << word + first + "ay" + " "
+      countfinal == string.split(" ").length - 1 ? 
+        final << word + first + "ay" : final << word + first + "ay" + " "
       countfinal += 1
     end
     return final
