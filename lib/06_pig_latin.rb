@@ -1,21 +1,19 @@
-def translate(chain)
+def translate(string)
     final = ""
     countfinal = 0
-    for word in chain.split(" ") #Pour chaque mot dans la phrase
+    for word in string.split(" ") 
       first = ""
-      count = 0
-      while ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"].include? word[count]
-        #Tant que la lettre est inclue dans la liste des consonnes
-        if word[count] == "q" && word[count + 1] == "u" #On gère l'exception du "qu"
-          first += "qu"
+      i = 0
+      while ! ['a','e','i','o','u'].include? word[i] 
+        if word[i] == "q" && word[i + 1] == "u"
+          first << "qu"
           break
         end
-        first += word[count]
-        count += 1
+        first << word[i]
+        i += 1
       end
-      word = word.tr(first, "") #On enlève toutes les premières consonnes du début
-      countfinal == chain.split(" ").length - 1 ? final += word + first + "ay" : final += word + first + "ay" + " "
-      #Si on est à la fin, on ne rajoute pas d'espace
+      word = word.tr(first, "")
+      countfinal == string.split(" ").length - 1 ? final << word + first + "ay" : final << word + first + "ay" + " "
       countfinal += 1
     end
     return final
